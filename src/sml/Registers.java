@@ -1,9 +1,12 @@
+//edward hall
+//ehall18
+
 package sml;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
-// TODO: write a JavaDoc for the class
+// TODO: write a JavaDoc for the class: DONE
 
 /**
  *
