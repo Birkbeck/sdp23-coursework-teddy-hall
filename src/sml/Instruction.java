@@ -1,6 +1,9 @@
+//edward hall
+//ehall18
+
 package sml;
 
-// TODO: write a JavaDoc for the class
+// TODO: write a JavaDoc for the class: DONE
 
 /**
  * Represents an abstract instruction.
@@ -42,16 +45,24 @@ public abstract class Instruction {
 	 *          the instruction with the next address is to be executed
 	 */
 
-	public abstract int execute(Machine machine);
-
 	protected String getLabelString() {
 		return (getLabel() == null) ? "" : getLabel() + ": ";
 	}
 
 	// TODO: What does abstract in the declaration below mean?
-	//       (Write a short explanation.)
+	//the word abstract means that toString() is not implemented in the Instruction class. Therefore any
+	//subclass must define an implementation for this method. This allows for
+	//polymorphism whereby subclasses can customise the method with their own implementations.
 	@Override
 	public abstract String toString();
 
+	public abstract int execute(Machine machine);
+
 	// TODO: Make sure that subclasses also implement equals and hashCode (needed in class Machine).
+
+	@Override
+	public abstract int hashCode();
+
+	@Override
+	public abstract boolean equals(Object obj);
 }
