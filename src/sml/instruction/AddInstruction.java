@@ -1,8 +1,16 @@
-package sml.instruction;
+//edward hall
+//ehall18
 
+package sml.instruction_types;
 import sml.Instruction;
 import sml.Machine;
 import sml.RegisterName;
+import sml.Registers;
+
+import java.util.Objects;
+
+import static sml.Registers.Register.*;
+
 
 // TODO: write a JavaDoc for the class
 
@@ -34,4 +42,28 @@ public class AddInstruction extends Instruction {
 	public String toString() {
 		return getLabelString() + getOpcode() + " " + result + " " + source;
 	}
+
+	@Override
+	public int hashCode(){
+		return Objects.hash(label,opcode,source,result);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+
+		if (obj instanceof AddInstruction other) {
+			return Objects.equals(this.label, other.label)
+					&& Objects.equals(this.opcode, other.opcode)
+					&& Objects.equals(this.result, other.result)
+					&& this.source == other.source;
+		}
+		return false;
+
+	}
+
 }
+
+
